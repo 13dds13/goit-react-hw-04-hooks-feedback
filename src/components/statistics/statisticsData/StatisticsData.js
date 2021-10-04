@@ -9,23 +9,24 @@ const StatisticsData = ({
   neutral,
   bad,
 }) => {
+  const total = countTotalFeedback();
+  const positive = countPositiveFeedbackPercentage();
   return (
     <div className={styles.container}>
       <p>Good: {good}</p>
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>
-      <p>Total: {countTotalFeedback()}</p>
-      <p>PositiveFeedback: {countPositiveFeedbackPercentage()}%</p>
+      <p>Total: {total}</p>
+      <p>PositiveFeedback: {positive}%</p>
     </div>
   );
 };
 
 StatisticsData.propTypes = {
-  countTotalFeedback: PropTypes.func,
-  countPositiveFeedbackPercentage: PropTypes.func,
-  good: PropTypes.number,
-  neutral: PropTypes.number,
-  bad: PropTypes.number,
+  countPositiveFeedbackPercentage: PropTypes.func.isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
 };
 
 export default StatisticsData;
