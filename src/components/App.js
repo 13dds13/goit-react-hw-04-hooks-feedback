@@ -10,7 +10,7 @@ const INIT_STATE = {
 };
 
 const App = () => {
-  const [state, setState] = useState(INIT_STATE);
+  const [state, setState] = useState({...INIT_STATE});
 
   const { good, neutral, bad } = state;
 
